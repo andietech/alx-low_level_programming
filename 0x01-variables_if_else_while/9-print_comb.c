@@ -1,18 +1,22 @@
 #include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: 0 when on success
- */
+* main - entry point to the program
+*
+* Return: 0 Whenever the program runs successfully
+*/
 int main(void)
 {
-	int number;
+	int outer;
+	int inner;
 
-	for (number = 0; number <= 9; number++)
-	{
-		putchar('0' + number);
-		if (number != 9)
-		}
+	for (outer = 0; outer <= 9; outer++)
+		{
+		for (inner = outer + 1; inner < 10; inner++)
+		{
+			putchar(outer + '0');
+			putchar(inner + '0');
+			if (outer == 8 && inner == 9)
+				continue;
 			putchar(',');
 			putchar(' ');
 		}
