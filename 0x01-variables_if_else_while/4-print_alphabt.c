@@ -6,10 +6,11 @@
  */
 int main(void)
 {
-	int number;
+	char number;
 
-	for (number = 0; number <= 9; number++)
-		printf("%i", number);
-	printf("\n");
+	for (number = 'a'; number <= 'z'; number++)
+		if (number != 'e' && number != 'q')
+			putchar(number);
+	putchar('\n');
 	return (0);
 }
