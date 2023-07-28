@@ -1,41 +1,27 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
+  * _strncpy - a function to copy the string
+  * @dest: we copy to this string
+  * @src: we copy from this string
+  * @n: number of bytes to copy
+  *
+  * Return: pointer to the resulting string
+  */
+char *_strncpy(char *dest, char *src, int n)
 {
-    char s1[98];
-    char *ptr;
-    int i;
+	int f;
 
-    for (i = 0; i < 98 - 1; i++)
-    {
-        s1[i] = '*';
-    }
-    s1[i] = '\0';
-    printf("%s\n", s1);
-    ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 5);
-    printf("%s\n", s1);
-    printf("%s\n", ptr);
-    ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 90);
-    printf("%s", s1);
-    printf("%s", ptr);
-    for (i = 0; i < 98; i++)
-    {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", s1[i]);
-    }
-    printf("\n");
-    return (0);
+	f = 0;
+	while (src[f] != '\0' && f < n)
+	{
+		dest[f] = src[f];
+		f++;
+	}
+	while (f < n)
+	{
+		dest[f] = '\0';
+		f++;
+	}
+	return (dest);
 }
