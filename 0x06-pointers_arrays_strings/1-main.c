@@ -1,26 +1,26 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
+  * _strcat - function to combine/concatenates two strings
+  * @dest: Destination string
+  * @src: Source data
+  * Return: returns the final concatenation
+  */
+char *_strcat(char *dest, char *src)
 {
-    char s1[98] = "Hello ";
-    char s2[] = "World!\n";
-    char *ptr;
+	char *final = dest; /* to store the starting address of destination */
 
-    printf("%s\n", s1);
-    printf("%s", s2);
-    ptr = _strncat(s1, s2, 1);
-    printf("%s\n", s1);
-    printf("%s", s2);
-    printf("%s\n", ptr);
-    ptr = _strncat(s1, s2, 1024);
-    printf("%s", s1);
-    printf("%s", s2);
-    printf("%s", ptr);
-    return (0);
+	/* to fint the end of the dest string */
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+
+	return (final);
 }
