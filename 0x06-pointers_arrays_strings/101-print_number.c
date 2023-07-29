@@ -1,23 +1,24 @@
 #include "main.h"
 
 /**
- * _strcmp - a function that compares two strings.
- * @s1: first stings to be  compared
- * @s2: second string to be compared
- *
- * Return: less than 0 if s1 is less than s2, 0 if they're
- * equal more than 0 if  is greateer than s2
- */
-int _strcmp(char *s1, char *s2)
+  * print_number -a function that prints integer only
+  * @n: integer to be printed
+  */
+void print_number(int n)
 {
-	while (*s1 == *s2)
+	unsigned int k;
+
+	if (n < 0)
 	{
-		if (*s1 == '\0')
-		{
-			return (0);
-		}
-		s1++;
-		s2++;
+		k = -n;
+		_putchar('-');
 	}
-	return (*s1 - *s2);
+	else
+	{
+		k = n;
+	}
+	if (k / 10)
+		print_number(k / 10);
+
+	_putchar((k % 10) + '0');
 }
