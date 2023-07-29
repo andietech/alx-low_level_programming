@@ -1,26 +1,26 @@
 #include "main.h"
 /**
-  * _strcat - function to combine/concatenates two strings
-  * @dest: Destination string
-  * @src: Source data
-  * Return: returns the final concatenation
+  * _strncat - concatenates two strings
+  * @dest: final string
+  * @src: source sring/ original string
+  * @n: integer to loop through
+  * Return: returns the destination string
   */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	char *final = dest; /* to store the starting address of destination */
-
-	/* to fint the end of the dest string */
-	while (*dest != '\0')
+	int dest_len = 0;
+	int src_len = 0;
+	/*Find the length of the destination and source strings*/
+	while (dest[dest_len] != '\0')
 	{
-		dest++;
+		dest_len++;
 	}
-	while (*src != '\0')
+	while (src[src_len] != '\0' && src_len < n)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[dest_len + src_len] = src[src_len];
+		src_len++;
 	}
-	*dest = '\0';
-
-	return (final);
+	/*Add null-terminator at the end of the concatenated string*/
+	dest[dest_len + src_len] = '\0';
+	return (dest);
 }
